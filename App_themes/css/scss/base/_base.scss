@@ -1,0 +1,37 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+    line-height: 1.4;
+    position: relative;
+    background-color: #EBEBEB;
+
+    &.medium-zoom--opened {
+        overflow: hidden;
+    }
+}
+
+a {
+    color: black;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+        color: $primary;
+    }
+}
+
+.btn {
+    border-radius: 0;
+}
+
+// Mixin itself
+@mixin clearfix() {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}

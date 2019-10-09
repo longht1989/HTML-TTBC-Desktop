@@ -1,0 +1,190 @@
+/* zone style */
+.zone {
+    margin-bottom: 1.5rem;
+
+    &__header {
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 0px;
+        position: relative;
+        padding-top: 10px;
+        display: inline-block;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 2px;
+            background: $primary;
+        }
+
+        .column-sidebar &,
+        .column-aside & {
+            display: block;
+        }
+    }
+
+    &--highlight {
+        .zone {
+            &__title {
+                padding: 0 0 10px;
+
+                &::before {
+                    top: auto;
+                    bottom: 0;
+                    height: 4px;
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+
+    &--secondary {
+        .zone {
+            &__title {
+                &::before {
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+
+    &--featured {
+        padding: 1.5rem;
+        background: url('../images/zone-background.png') center center no-repeat;
+        background-size: cover;
+
+        .zone {
+            &__title {
+                padding-top: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            &__content {
+                font-size: 0;
+                margin: 0 -0.5rem;
+                @include clearfix;
+            }
+        }
+
+        .story {
+            width: 25%;
+            padding: 0 8px;
+            float: left;
+            margin: 0 0 1rem;
+
+            &--featured {
+                width: 50%;
+
+                .story__thumb {
+                    &::after {
+                        left: 0.5rem;
+                        right: 0.5rem;
+                    }
+                }
+
+                .story__header {
+                    left: 0.5rem;
+                    right: 0.5rem;
+                }
+            }
+
+            &+.story {
+                margin-top: 0;
+            }
+
+            &:nth-child(4) {
+                clear: left;
+            }
+        }
+    }
+
+    &--about {
+        padding: 2.5rem 2rem;
+        background: url('../images/about-background.png') center center no-repeat;
+        background-size: cover;
+        color: white;
+        margin-left: -30px;
+        margin-right: -30px;
+
+        .zone {
+            &__title {
+                padding: 0 0 10px;
+                margin-bottom: 1rem;
+
+                &::before {
+                    top: auto;
+                    bottom: 0;
+                    height: 4px;
+                    background-color: $secondary;
+                }
+            }
+        }
+
+        .service-listing {
+            .fas {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    &--slider {
+        .slider {
+            &-wrap {
+                position: relative;
+
+                .selector {
+                    position: absolute;
+                    top: 120px;
+                    width: 40px;
+                    height: 60px;
+                    line-height: 60px;
+                    background-color: rgba(255, 255, 255, 1);
+                    font-size: 2rem;
+                    text-align: center;
+                    transition: all 0.2s ease-in-out;
+                    opacity: 0.4;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+
+                    a {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            &-control {}
+
+            &-prev {
+                left: 8px;
+            }
+
+            &-next {
+                right: 8px;
+            }
+        }
+    }
+}
+
+.qc {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}

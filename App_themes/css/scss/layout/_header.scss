@@ -1,0 +1,128 @@
+// Header style
+.site-header {
+    &__topbar {
+        height: 45px;
+        border-bottom: 1px solid #D6D6D6;
+        font-size: 14px;
+        line-height: 45px;
+        margin-left: -30px;
+        margin-right: -30px;
+        padding: 0 30px;
+        background-color: #F6F6F6;
+    }
+
+    .language {
+        &>a {
+            img {
+                transition: all 0.2s ease-in-out;
+            }
+
+            &+a {
+                margin-left: 10px;
+            }
+
+            &:hover {
+                img {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    &__content {
+        @include clearfix;
+        padding: 15px 0;
+
+        .logo {
+            float: left;
+            max-width: 120px;
+            margin: 0;
+        }
+
+        .banner {
+            float: right;
+        }
+    }
+
+    .nav {
+        border-bottom: 1px solid #ddd;
+
+        &-item {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: relative;
+
+            &:hover {
+                .nav-sub {
+                    display: block;
+                }
+            }
+
+            &.is-active {
+                &>.nav-link {
+                    color: $primary;
+                }
+            }
+        }
+
+        &-sub {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: auto;
+            width: 300px;
+            list-style-type: none;
+            padding-left: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            z-index: 3;
+        }
+    }
+
+    .breaking {
+        @include clearfix();
+        margin-top: 15px;
+
+        &__label {
+            float: left;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.4;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        &__listing {
+            padding-left: 1rem;
+            float: left;
+            list-style-type: none;
+        }
+
+        &__item {
+            font-size: 14px;
+            font-weight: normal;
+            float: left;
+
+            &+.breaking__item {
+                position: relative;
+                padding-left: 15px;
+                margin-left: 15px;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 4px;
+                    height: 4px;
+                    background: rgba(0, 0, 0, .5);
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -2px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.page {
+    &-media {
+        .column {
+            &-main {
+                float: none;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

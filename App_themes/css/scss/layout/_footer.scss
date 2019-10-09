@@ -1,0 +1,40 @@
+.site-footer {
+    margin: 2rem 0px 1.5rem;
+
+    .logo {
+        img {
+            max-width: 3rem;
+        }
+    }
+
+    .map {
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 0.5rem;
+
+        .fal {
+            margin-right: 0.5rem;
+        }
+    }
+
+    a {
+        color: $primary;
+    }
+
+    .text {
+        display: block;
+        overflow: hidden;
+
+        &-wrap {
+            padding-left: 3rem;
+
+            .far {
+                width: 1.5rem;
+                float: left;
+                margin: 4px 1rem 0px 0;
+            }
+        }
+    }
+}

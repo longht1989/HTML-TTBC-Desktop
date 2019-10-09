@@ -1,0 +1,75 @@
+.wrapper {
+    width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include clearfix;
+}
+
+.column {
+    &-wrap {
+        @include clearfix;
+    }
+
+    &-main {
+        width: 815px;
+        float: left;
+    }
+
+    &-sidebar {
+        width: 300px;
+        float: right;
+    }
+
+    &-timeline {
+        width: 500px;
+        float: left;
+    }
+
+    &-aside {
+        width: 300px;
+        float: right;
+    }
+
+    &-dark {
+        background-color: #2A2A2A;
+        margin: 0 -30px 1.5rem;
+    }
+}
+
+.zone--highlight {
+    .highlight-zone {
+        @include clearfix();
+        margin: 0 -8px 15px;
+        vertical-align: top;
+        // font-size: 0;
+    }
+
+    .slider-wrap {
+        padding: 0 8px;
+        width: 66.66%;
+        float: left;
+    }
+
+    .story--vertical {
+        padding: 0 8px;
+        width: 33.33%;
+        float: right;
+    }
+
+    .top-stories {
+        @include clearfix;
+        margin-left: -8px;
+        margin-right: -8px;
+        font-size: 0;
+
+        &>.story {
+            width: 33.33%;
+            padding: 0 8px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 0;
+        }
+    }
+}
