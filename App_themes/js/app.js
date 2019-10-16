@@ -65,22 +65,3 @@ function expandNav() {
     $('.btn-expand .fa-bars').toggle();
     $('.btn-expand .fa-times').toggle();
 }
-
-// light gallery
-if ($(".lightgallery").length > 0) {
-    var $lg = $('.lightgallery');
-    $lg.lightGallery();
-}
-
-// masonry
-var $grid = $('.grid-wrap');
-if ($(".grid-wrap").length > 0) {
-    $grid.masonry({
-        // options
-        columnWidth: '.item-sizer',
-        gutter: '.gutter-sizer',
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        transitionDuration: '0.2s'
-    });
-}

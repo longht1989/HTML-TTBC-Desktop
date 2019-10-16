@@ -10,6 +10,8 @@
     &__thumb {
         margin-bottom: 0.625rem;
         overflow: hidden;
+        text-align: center;
+        background-color: #f0f0f0;
 
         img {
             transition: all 0.2s ease-in-out;
@@ -121,46 +123,41 @@
     }
 
     &--mask {
-        position: relative;
+        @media screen and (min-width: 768px) {
+            position: relative;
 
-        .story {
-            &__thumb {
-                &::after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    top: 0rem;
-                    bottom: 0rem;
-                    right: 0rem;
-                    left: 0rem;
-                    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
+            .story {
+                &__thumb {
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 0rem;
+                        bottom: 0rem;
+                        right: 0rem;
+                        left: 0rem;
+                        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
+                    }
                 }
-            }
 
-            &__header {
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                padding: 0.625rem;
-            }
+                &__header {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    padding: 0.625rem;
+                }
 
-            &__title {
-                a {
-                    color: #fff;
+                &__title {
+                    a {
+                        color: #fff;
 
-                    &:hover {
-                        color: #ccc;
+                        &:hover {
+                            color: #ccc;
+                        }
                     }
                 }
             }
-        }
-
-        &:hover {
-
-            .story__thumb::after,
-            .story__thumb a::after,
-            .story__header {}
         }
     }
 

@@ -1,35 +1,65 @@
 @media screen and (max-width: 767px) {}
 
 @media screen and (min-width: 768px) {
-    .grid {
-        &-wrap {
-            @include clearfix;
+    .wrapper {
+        max-width: 875px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
 
-            .grid-item {
-                float: left;
-                width: 32.6%;
-                margin-bottom: 2rem;
-                padding: 0 1rem;
-            }
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        max-width: 1000px;
+    }
 
-            .item-sizer {
-                width: 32.6%;
-            }
+    .column {
+        &-main {
+            width: 615px;
+            float: left;
+        }
 
-            .gutter-sizer {
-                width: 1%;
-            }
+        &-sidebar {
+            width: 300px;
+            float: right;
+        }
 
-            .story+.story {
-                margin-top: 0;
-            }
+        &-timeline {
+            width: 395px;
+            float: left;
+        }
+
+        &-aside {
+            width: 195px;
+            float: right;
         }
     }
 }
 
-@media screen and (min-width: 1024px) {}
-
 @media screen and (min-width: 1200px) {}
+
+@media screen and (min-width: 1280px) {
+    .wrapper {
+        max-width: 1200px;
+    }
+
+    .column {
+        &-main {
+            width: 815px;
+        }
+
+        &-sidebar {}
+
+        &-timeline {
+            width: 500px;
+        }
+
+        &-aside {
+            width: 300px;
+        }
+    }
+}
+
 
 /* Minimum aspect ratio */
 @media (min-aspect-ratio: 2/3) {}

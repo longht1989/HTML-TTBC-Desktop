@@ -28,12 +28,14 @@
         overflow: hidden;
 
         &-wrap {
-            padding-left: 3rem;
-
             .far {
                 width: 1.5rem;
                 float: left;
                 margin: 4px 1rem 0px 0;
+            }
+
+            @media screen and(min-width: 768px) {
+                padding-left: 3rem;
             }
         }
     }

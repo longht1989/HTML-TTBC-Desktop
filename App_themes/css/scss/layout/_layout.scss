@@ -1,35 +1,15 @@
 .wrapper {
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
     background-color: #fff;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
     @include clearfix;
 }
 
 .column {
     &-wrap {
         @include clearfix;
-    }
-
-    &-main {
-        width: 815px;
-        float: left;
-    }
-
-    &-sidebar {
-        width: 300px;
-        float: right;
-    }
-
-    &-timeline {
-        width: 500px;
-        float: left;
-    }
-
-    &-aside {
-        width: 300px;
-        float: right;
     }
 
     &-dark {
@@ -39,37 +19,35 @@
 }
 
 .zone--highlight {
-    .highlight-zone {
-        @include clearfix();
-        margin: 0 -8px 15px;
-        vertical-align: top;
-        // font-size: 0;
+
+    .slider-wrap,
+    .story--vertical,
+    .top-stories .story {
+        margin-bottom: 1rem;
     }
 
-    .slider-wrap {
-        padding: 0 8px;
-        width: 66.66%;
-        float: left;
-    }
+    @media screen and(min-width: 768px) {
+        .highlight-zone {
+            @include clearfix();
+            margin: 0 -8px 15px;
+        }
 
-    .story--vertical {
-        padding: 0 8px;
-        width: 33.33%;
-        float: right;
-    }
-
-    .top-stories {
-        @include clearfix;
-        margin-left: -8px;
-        margin-right: -8px;
-        font-size: 0;
-
-        &>.story {
-            width: 33.33%;
+        .slider-wrap {
             padding: 0 8px;
-            display: inline-block;
-            vertical-align: top;
-            margin-top: 0;
+            width: 66.66%;
+            float: left;
+            margin-bottom: 0;
+        }
+
+        .story--vertical {
+            padding: 0 8px;
+            width: 33.33%;
+            margin-bottom: 0;
+            float: right;
+        }
+
+        .top-stories .story {
+            margin-bottom: 0;
         }
     }
 }
