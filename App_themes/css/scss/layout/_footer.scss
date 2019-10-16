@@ -1,5 +1,6 @@
 .site-footer {
-    margin: 2rem 0px 1.5rem;
+    padding: 2rem 0px 1.5rem;
+    @include clearfix();
 
     .logo {
         img {

@@ -179,9 +179,19 @@
     .breaking {
         @include clearfix();
         margin-top: 15px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &>* {
+            flex: 0 0 auto;
+        }
 
         &__label {
-            float: left;
             margin: 0;
             font-size: 14px;
             line-height: 1.4;
@@ -191,7 +201,6 @@
 
         &__listing {
             padding-left: 1rem;
-            float: left;
             list-style-type: none;
         }
 

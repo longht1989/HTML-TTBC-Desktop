@@ -7,10 +7,6 @@ body {
     line-height: 1.4;
     position: relative;
     background-color: #EBEBEB;
-
-    &.medium-zoom--opened {
-        overflow: hidden;
-    }
 }
 
 a {
@@ -21,10 +17,6 @@ a {
         text-decoration: none;
         color: $primary;
     }
-}
-
-.btn {
-    border-radius: 0;
 }
 
 // Mixin itself
