@@ -34,13 +34,23 @@ $(function() {
             auto: 1,
             minSlides: 1,
             maxSlides: 1,
-            pagerType :'short',
+            pagerType: 'short',
             captions: true,
             controls: 0
         });
     }
     // button click
     $('#site-header .btn-expand').on('click', btnExpandClick);
+
+    // tab zone calendar
+    if ($('.zone--calendar').length > 0) {
+        $(".zone__nav a").on('click', function() {
+            var direction = $(this).attr('aria-controls');
+            $('.zone--calendar .zone__title').removeClass('active');
+            $('.zone--calendar #' + direction + '-title').addClass('active');
+        });
+    }
+
 });
 
 /*customise function*/

@@ -43,6 +43,20 @@
                     .image-wrap {
                         max-height: 458px;
 
+                        .image-caption {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            right: 10%;
+                            padding: 0.5rem;
+                            background: rgba(0, 0, 0, .5);
+                            font-size: 0.75rem;
+
+                            @media screen and(min-width: 768px) {
+                                font-size: 1rem;
+                            }
+                        }
+
                         .bx {
                             &-caption {
                                 position: absolute;
@@ -59,6 +73,7 @@
                                 right: 0;
                                 bottom: 10px;
                                 text-align: center;
+                                font-size: 0.875rem;
                             }
                         }
                     }
@@ -97,10 +112,30 @@
     }
 
     &__avatar {
+        text-align: center;
+
         figcaption {
             margin-top: 0.5rem;
             text-align: center;
             font-style: italic;
+        }
+    }
+
+    &__extension {
+        padding-left: 3rem;
+        position: relative;
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+
+        p {
+            margin-bottom: 0.5rem;
+        }
+
+        .fal {
+            font-size: 1.5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
 
