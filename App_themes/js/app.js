@@ -1,5 +1,20 @@
 // init function
+var isMobile, isTablet, isDesktop;
+
 $(function() {
+    /*check device width*/
+    bsContainerWidth = $("body").find('.wrapper').outerWidth();
+    if (bsContainerWidth < 720) {
+        console.log("mobile");
+        isMobile = true;
+    } else if (bsContainerWidth < 960) {
+        console.log("tablet");
+        isTablet = true;
+    } else {
+        console.log("desktop");
+        isDesktop = true;
+    }
+
     /*pin header */
     window.onscroll = function() { windowScroll() };
 
@@ -50,7 +65,11 @@ $(function() {
             $('.zone--calendar #' + direction + '-title').addClass('active');
         });
     }
-
+    // swap thumb for vertical story
+    if ($('.story--vertical').length > 0 && isMobile) {
+        var newSrc = $('.story--vertical').find('.story__thumb img').attr('data-src');
+        $('.story--vertical').find('.story__thumb img').attr('src', newSrc);
+    }
 });
 
 /*customise function*/
