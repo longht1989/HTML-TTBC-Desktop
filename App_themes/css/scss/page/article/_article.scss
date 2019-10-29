@@ -136,6 +136,12 @@
             top: 0;
             left: 0;
         }
+
+        &-wrap {
+            padding: 1rem;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+        }
     }
 
     &__content {
