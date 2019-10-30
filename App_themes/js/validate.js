@@ -30,8 +30,11 @@ $().ready(function() {
 
     // listen event keypress on input form-control
     $('.form-control[required]').keypress(function() {
-        $(this).removeClass('error');
-        $(this).next('.error').html('');
+        var currentValue = $(this).val();
+        if (!isBlank(currentValue)) {
+            $(this).removeClass('error');
+            $(this).next('.error').html('');
+        }
     });
 });
 
@@ -50,9 +53,8 @@ function addFormError(form) {
 }
 
 function ValidateForm(formTarget) {
-    var inputArray = $('#' + formTarget).find('.form-control[required]');
     var isTrue = true;
-    inputArray.each(function() {
+    $(formTarget).each(function() {
         var value = $(this).val();
         var inputType = $(this).attr('type');
         if (isBlank(value)) {
@@ -61,6 +63,7 @@ function ValidateForm(formTarget) {
         } else if (inputType === 'email') {
             if (!validateEmail(value)) {
                 $(this).addClass('error').next('.error').text('Nhập đúng định dạng email');
+                isTrue = false;
             } else {
                 $(this).removeClass('error').next('.error').html('');
             }
