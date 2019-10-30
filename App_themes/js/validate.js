@@ -1,27 +1,4 @@
 $().ready(function() {
-    $("#formDemo").validate({
-        rules: {
-            date: {
-                required: true,
-                date: true
-            },
-            dateEnd: {
-                required: true,
-                date: true
-            }
-        },
-        messages: {
-            date: {
-                required: 'Vui lòng nhập ngày tháng',
-                date: 'Vui lòng nhập ngày tháng chính xác'
-            },
-            dateEnd: {
-                required: 'Vui lòng nhập ngày tháng',
-                date: 'Vui lòng nhập ngày tháng chính xác'
-            }
-        }
-    });
-
     var dateBegin, dateEnd, CurrentDate;
     $('input[name="dateBegin"]').on('focus', function() {
         f = $(this);
@@ -51,17 +28,52 @@ $().ready(function() {
         }
     })
 
-    function removeFormFocus(form) {
-        form.removeClass('error');
-        form.next('.error').remove();
-    }
-
-    function addFormError(form) {
-        form.addClass('error');
-        if (form.attr('data-name') === "dataBegin") {
-            form.after('<label class="error">Ngày bắt đầu không được nhỏ hơn ngày hiện tại</label>');
-        } else {
-            form.after('<label class="error">Ngày kết thúc không được nhỏ hơn ngày bắt đầu</label>');
-        }
-    }
+    // listen event keypress on input form-control
+    $('.form-control[required]').keypress(function() {
+        $(this).removeClass('error');
+        $(this).next('.error').html('');
+    });
 });
+
+function removeFormFocus(form) {
+    form.removeClass('error');
+    form.next('.error').remove();
+}
+
+function addFormError(form) {
+    form.addClass('error');
+    if (form.attr('data-name') === "dataBegin") {
+        form.after('<label class="error">Ngày bắt đầu không được nhỏ hơn ngày hiện tại</label>');
+    } else {
+        form.after('<label class="error">Ngày kết thúc không được nhỏ hơn ngày bắt đầu</label>');
+    }
+}
+
+function ValidateForm(formTarget) {
+    var inputArray = $('#' + formTarget).find('.form-control[required]');
+    var isTrue = true;
+    inputArray.each(function() {
+        var value = $(this).val();
+        var inputType = $(this).attr('type');
+        if (isBlank(value)) {
+            $(this).addClass('error').next('.error').text($(this).data('require'));
+            isTrue = false;
+        } else if (inputType === 'email') {
+            if (!validateEmail(value)) {
+                $(this).addClass('error').next('.error').text('Nhập đúng định dạng email');
+            } else {
+                $(this).removeClass('error').next('.error').html('');
+            }
+        }
+    });
+    return isTrue;
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function isBlank(str) {
+    return !str || str.replace(/\s/g, "") === "";
+}

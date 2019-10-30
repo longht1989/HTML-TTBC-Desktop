@@ -19,6 +19,13 @@
     transform: translate(0, 20%);
 }
 
+a.btn {
+    cursor: pointer;
+    &:not([href]):not([tabindex]) {
+        color: white;
+    }
+}
+
 .btn-round {
     border-radius: 30px;
     min-width: 100px;
@@ -55,10 +62,16 @@ h2.title {
 .form-control {
     &.error {
         border: 1px solid red;
+
         &~.error {
             font-size: 0.875rem;
             margin-bottom: 0;
             color: red;
         }
     }
+}
+
+.grecaptcha-badge {
+    visibility: collapse !important;
+    display: none !important;
 }
