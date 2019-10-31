@@ -348,7 +348,7 @@
                 right: 0;
                 z-index: 2;
                 padding: 0 0.5rem;
-                max-height: 74px;
+                max-height: 46px;
                 overflow: hidden;
 
                 ul {
@@ -378,6 +378,10 @@
                             }
                         }
                     }
+                }
+
+                @media screen and(min-width: 768px) {
+                    max-height: 74px;
                 }
             }
 
@@ -440,7 +444,7 @@
     .content {
         .day {
             text-align: right;
-            padding: 0.5rem 0.5rem 5rem;
+            padding: 0.5rem 0.5rem 3rem;
             border-top: 1px solid #ddd;
 
             &.out {
@@ -455,6 +459,9 @@
                 }
             }
 
+            @media screen and(min-width: 768px) {
+                padding-bottom: 5rem;
+            }
 
         }
     }
@@ -467,8 +474,9 @@
         &__title {
             padding-top: 0;
             margin: auto;
-            text-align: center;
             display: none;
+            font-size: 1.125rem;
+            line-height: 2.375rem;
 
             &::before {
                 display: none;
@@ -476,6 +484,10 @@
 
             &.active {
                 display: block;
+            }
+
+            @media screen and(min-width: 768px) {
+                text-align: center;
             }
         }
 
@@ -494,6 +506,11 @@
 
     .nav-tabs {
         border-bottom: none;
+        margin-top: 1rem;
+
+        @media screen and(min-width: 768px) {
+            margin-top: 0;
+        }
 
         &>a {
             padding: 0.5rem 0.625rem;
