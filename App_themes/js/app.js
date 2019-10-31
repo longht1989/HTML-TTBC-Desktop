@@ -4,7 +4,7 @@ var isMobile, isTablet, isDesktop;
 $(function() {
     /*check device width*/
     bsContainerWidth = $("body").find('.wrapper').outerWidth();
-    if (bsContainerWidth < 720) {
+    if (bsContainerWidth < 768) {
         console.log("mobile");
         isMobile = true;
     } else if (bsContainerWidth < 960) {

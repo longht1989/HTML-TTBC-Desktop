@@ -51,55 +51,6 @@
                 line-height: 29px;
             }
 
-            &.event {
-                &-done {
-                    cursor: pointer;
-
-                    .day {
-                        &-number {
-                            background-color: $blue;
-                            color: white;
-                        }
-                    }
-                }
-
-                &-active {
-                    cursor: pointer;
-
-                    .day {
-                        &-number {
-                            background-color: $green;
-                            color: white;
-                        }
-                    }
-                }
-
-                &-next {
-                    cursor: pointer;
-
-                    .day {
-                        &-number {
-                            border: 1px solid $blue;
-                            color: $blue;
-                        }
-                    }
-                }
-            }
-
-            &.has-event {
-                position: relative;
-
-                &:hover {
-                    .event-listing {
-                        display: block;
-
-                        &::before {
-                            display: block;
-                        }
-                    }
-                }
-            }
-
             .event-listing {
                 position: absolute;
                 width: 300px;
@@ -114,13 +65,28 @@
                     border: 1px solid #eee;
                     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .11);
                     background: #fff;
-                    padding: 0.5rem 1rem;
+                    padding: 0.5rem 1rem 0.5rem 0;
                     text-align: left;
                     margin-bottom: 0px;
+                    list-style-type: none;
 
                     li {
                         margin-left: 1rem;
                         margin-bottom: 0;
+                        position: relative;
+                        padding-left: 1rem;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: 6px;
+                            height: 6px;
+                            position: absolute;
+                            top: 14px;
+                            left: 0;
+                            margin-top: -3px;
+                            border-radius: 50%;
+                        }
 
                         &+li {
                             margin-top: 0.75rem;
@@ -140,6 +106,80 @@
                     bottom: 3px;
                     left: 50%;
                     margin-left: 8px;
+                }
+            }
+
+            &.event {
+                &-done {
+                    cursor: pointer;
+
+                    .day {
+                        &-number {
+                            background-color: $blue;
+                            color: white;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            &::before {
+                                background-color: $blue
+                            }
+                        }
+                    }
+                }
+
+                &-active {
+                    cursor: pointer;
+
+                    .day {
+                        &-number {
+                            background-color: $green;
+                            color: white;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            &::before {
+                                background-color: $green
+                            }
+                        }
+                    }
+                }
+
+                &-next {
+                    cursor: pointer;
+
+                    .day {
+                        &-number {
+                            border: 1px solid $blue;
+                            color: $blue;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            &::before {
+                                background-color: white;
+                                border: 1px solid $blue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.has-event {
+                position: relative;
+
+                &:hover {
+                    .event-listing {
+                        display: block;
+
+                        &::before {
+                            display: block;
+                        }
+                    }
                 }
             }
 
