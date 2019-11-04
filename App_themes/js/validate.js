@@ -20,7 +20,7 @@ $().ready(function() {
         var dateBegin = new Date(dateBeginInput[2], dateBeginInput[1] - 1, dateBeginInput[0]);
         var hourBeginInput = $("#hourBegin").val().split(':');
         day1 = dateBegin.setHours(hourBeginInput[0], hourBeginInput[1]);
-
+        console.log(dateBegin);
         f = $(this);
         var CurrentDate = new Date().getTime();
         if (dateBegin < CurrentDate) {
@@ -74,9 +74,6 @@ function validateTime(obj) {
         } else if (parseInt(sHours) == 0) {
             sHours = "00";
             obj.classList.remove('error');
-        } else if (sHours < 10) {
-            sHours = "0" + sHours;
-            obj.classList.remove('error');
         }
 
         if (sMinutes == "" || isNaN(sMinutes) || parseInt(sMinutes) > 59) {
@@ -85,9 +82,6 @@ function validateTime(obj) {
             return false;
         } else if (parseInt(sMinutes) == 0) {
             sMinutes = "00";
-            obj.classList.remove('error');
-        } else if (sMinutes < 10) {
-            sMinutes = "0" + sMinutes;
             obj.classList.remove('error');
         }
 
