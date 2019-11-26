@@ -127,16 +127,7 @@
 
             .story {
                 &__thumb {
-                    &::after {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        top: 0rem;
-                        bottom: 0rem;
-                        right: 0rem;
-                        left: 0rem;
-                        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
-                    }
+                    margin-bottom: 0;
                 }
 
                 &__header {
@@ -145,6 +136,7 @@
                     right: 0;
                     bottom: 0;
                     padding: 0.625rem;
+                    background-color: rgba(0, 0, 0, 0.7);
                 }
 
                 &__title {
