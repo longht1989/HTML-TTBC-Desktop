@@ -79,15 +79,15 @@ h2.title {
 
 #gotop {
     display: none;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     position: fixed;
     right: 8px;
     bottom: 8px;
     border-radius: 50%;
     background-color: $green;
     text-align: center;
-    line-height: 2rem;
+    line-height: 2.5rem;
 
     &:hover {
         background-color: darken($green, 10%);
