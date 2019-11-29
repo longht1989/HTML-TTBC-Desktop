@@ -97,4 +97,10 @@ h2.title {
         color: white;
         display: block;
     }
+
+    @media screen and(min-width:1440px) {
+        right: auto;
+        left: 50%;
+        margin-left: 620px;
+    }
 }
