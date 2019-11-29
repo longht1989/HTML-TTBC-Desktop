@@ -78,8 +78,10 @@ function windowScroll() {
     var headerHeight = $("#site-header").outerHeight();
     if (document.body.scrollTop > headerHeight || document.documentElement.scrollTop > headerHeight) {
         $("#site-header").addClass('is-pinned');
+        $('#gotop').fadeIn();
     } else {
         $("#site-header").removeClass('is-pinned');
+        $('#gotop').fadeOut();
     }
 }
 

@@ -21,6 +21,7 @@
 
 a.btn {
     cursor: pointer;
+
     &:not([href]):not([tabindex]) {
         color: white;
     }
@@ -74,4 +75,26 @@ h2.title {
 .grecaptcha-badge {
     visibility: collapse !important;
     display: none !important;
+}
+
+#gotop {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+    border-radius: 50%;
+    background-color: $green;
+    text-align: center;
+    line-height: 2rem;
+
+    &:hover {
+        background-color: darken($green, 10%);
+    }
+
+    a {
+        color: white;
+        display: block;
+    }
 }
