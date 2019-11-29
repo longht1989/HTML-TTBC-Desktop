@@ -281,3 +281,26 @@
         margin-right: 0;
     }
 }
+
+.slide-banner {
+    display: none;
+
+    @media screen and(min-width: 1601px) {
+        display: block;
+    }
+
+    &.left,
+    &.right {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+    }
+
+    &.left {
+        margin-left: -780px;
+    }
+
+    &.right {
+        margin-left: 620px;
+    }
+}
