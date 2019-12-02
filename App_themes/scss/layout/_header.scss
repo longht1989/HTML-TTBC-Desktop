@@ -75,14 +75,16 @@
         margin-right: -15px;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
+        background-color: #1b8c8c;
 
         &-item {
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 1rem;
             position: relative;
-            border-bottom: 1px solid #eee;
+            color: white;
 
             &:hover {
+                background-color: #106969;
+
                 .nav-sub {
                     display: block;
                 }
@@ -90,7 +92,7 @@
 
             &.is-active {
                 &>.nav-link {
-                    color: $primary;
+                    background-color: #106969;
                 }
             }
 
@@ -99,7 +101,9 @@
             }
         }
 
-        &-link {}
+        &-link {
+            color: white;
+        }
 
         &-sub {
             display: none;
@@ -110,9 +114,17 @@
             width: 300px;
             list-style-type: none;
             padding-left: 0;
-            background: #fff;
-            border: 1px solid #ddd;
+            background: #106969;
+            border: 1px solid #106969;
             z-index: 3;
+
+            .nav-item {
+                font-size: 0.875rem;
+
+                &:hover {
+                    background-color: darken(#106969, 10%);
+                }
+            }
         }
 
         .nav-search {
@@ -137,6 +149,7 @@
                         right: 0.5rem;
                         top: 50%;
                         transform: translateY(-50%);
+                        color: black;
                     }
                 }
             }
