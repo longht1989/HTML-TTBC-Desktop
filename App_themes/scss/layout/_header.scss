@@ -73,9 +73,8 @@
         font-family: 'Roboto', Arial, "Helvetica Neue", Helvetica, sans-serif;
         margin-left: -15px;
         margin-right: -15px;
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-        background-color: #1b8c8c;
+       border: 1px solid #ccc;
+        background-color: #fafafa;
 
         &-item {
             font-size: 1rem;
@@ -85,13 +84,14 @@
             &:hover {
                 background-color: #106969;
 
-                .nav-sub {
-                    display: block;
+                &>.nav-link {
+                    color: white;
                 }
             }
 
             &.is-active {
                 &>.nav-link {
+                    color: white;
                     background-color: #106969;
                 }
             }
@@ -102,7 +102,7 @@
         }
 
         &-link {
-            color: white;
+            // color: white;
         }
 
         &-sub {
@@ -159,14 +159,23 @@
             display: flex;
             margin-left: 0;
             margin-right: 0;
-            border-top: none;
+            border: none;
+            background-color: #1b8c8c;
 
             .nav-item {
                 text-transform: uppercase;
                 border-bottom: none;
+
+                &:hover {
+                    .nav-sub {
+                        display: block;
+                    }
+                }
             }
 
-            .nav-link {}
+            .nav-link {
+                color: white;
+            }
 
             .nav-search {
                 &>.nav-link {
