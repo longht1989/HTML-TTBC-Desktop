@@ -22,6 +22,10 @@
 
     a {
         color: $primary;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .text {
@@ -29,6 +33,9 @@
         overflow: hidden;
 
         &-wrap {
+
+            .fas,
+            .fab,
             .far {
                 width: 1.5rem;
                 float: left;
@@ -36,7 +43,7 @@
             }
 
             @media screen and(min-width: 768px) {
-                padding-left: 3rem;
+                // padding-left: 3rem;
             }
         }
     }
