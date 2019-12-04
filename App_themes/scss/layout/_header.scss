@@ -1,5 +1,13 @@
 // Header style
 .site-header {
+    position: relative;
+    z-index: 3;
+    margin-left: -15px;
+    margin-right: -15px;
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+
     &__topbar {
         height: 45px;
         border-bottom: 1px solid #D6D6D6;
@@ -71,15 +79,23 @@
     .nav {
         display: none;
         font-family: 'Roboto', Arial, "Helvetica Neue", Helvetica, sans-serif;
-        margin-left: -15px;
-        margin-right: -15px;
-       border: 1px solid #ccc;
-        background-color: #fafafa;
+        position: absolute;
+        top: 100%;
+        left: 20%;
+        right: 0;
+        overflow: auto;
+        background: white;
+        width: 80%;
+        margin-top: 1px;
 
         &-item {
             font-size: 1rem;
             position: relative;
             color: white;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            background: #fff;
 
             &:hover {
                 background-color: #106969;
@@ -161,12 +177,17 @@
             margin-right: 0;
             border: none;
             background-color: #1b8c8c;
+            position: static;
+            width: initial;
+            overflow: visible;
 
             .nav-item {
-                text-transform: uppercase;
                 border-bottom: none;
+                background-color: transparent;
 
                 &:hover {
+                    background-color: #106969;
+
                     .nav-sub {
                         display: block;
                     }

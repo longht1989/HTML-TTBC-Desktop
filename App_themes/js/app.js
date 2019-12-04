@@ -56,6 +56,9 @@ $(function() {
     }
     // button click
     $('#site-header .btn-expand').on('click', btnExpandClick);
+    
+    // site mask click
+    $('.site-mask').on('click', siteMaskClick);
 
     // tab zone calendar
     if ($('.zone--calendar').length > 0) {
@@ -95,4 +98,14 @@ function expandNav() {
     $('#site-header .nav').toggle();
     $('.btn-expand .fa-bars').toggle();
     $('.btn-expand .fa-times').toggle();
+    $('body').toggleClass('is-expanded');
+}
+
+function siteMaskClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('#site-header .nav').hide();
+    $('.btn-expand .fa-bars').show();
+    $('.btn-expand .fa-times').hide();
+    $('body').removeClass('is-expanded');
 }
