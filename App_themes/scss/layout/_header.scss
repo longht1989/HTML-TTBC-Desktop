@@ -53,7 +53,7 @@
         .logo {
             float: left;
             margin: 0;
-            max-width: 80px;
+            max-width: 60px;
 
             @media screen and (min-width: 1024px) {
                 max-width: 120px;
@@ -156,18 +156,6 @@
                 border: none;
                 padding: 1rem;
                 background-color: #f0f0f0;
-
-                .input-wrap {
-                    position: relative;
-
-                    .fal {
-                        position: absolute;
-                        right: 0.5rem;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        color: black;
-                    }
-                }
             }
         }
 
@@ -222,26 +210,73 @@
         }
     }
 
-    .btn-expand {
+    // mobile tools
+    &__tools {
         margin-left: auto;
 
-        @media (min-width: 1024px) {
-            display: none;
+        *[class*="btn-"] {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            text-align: center;
+            margin-left: 0.25rem;
+        }
+
+        *[class*="fa-"] {
+            position: relative;
+            top: -3px;
         }
 
         .fal {
-            font-size: 2rem;
-            line-height: 32px;
+            font-size: 1.125rem;
         }
 
         .fa-times {
             display: none;
+        }
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    .input-wrap {
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        right: 0;
+        margin-top: 1px;
+        background: #f0f0f0;
+        padding: 0.5rem;
+
+        .fal {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: black;
+        }
+
+        &-mobile {
+            display: none;
+
+            .fal {
+                right: 1rem;
+            }
         }
     }
 
     .breaking {
         @include clearfix();
         margin-top: 15px;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 15px 15px 0;
+        border-top: 1px solid #ddd;
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -290,6 +325,13 @@
                     border-radius: 50%;
                 }
             }
+        }
+
+        @media screen and(min-width: 1024px) {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+            border-top: none;
         }
     }
 }

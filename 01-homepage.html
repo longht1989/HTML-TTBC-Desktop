@@ -18,14 +18,25 @@
 <body class="page-index">
     <div class="wrapper">
         <header class="site-header" id="site-header">
+            <div class="site-header__topbar"></div>
             <div class="site-header__content">
                 <h1 class="logo"><a href="01-homepage.html"><img class="img-fluid" src="App_themes/images/logo.png" alt="Trung tâm báo chí TP.Hồ Chí Minh" title="Trung tâm báo chí TP.Hồ Chí Minh"></a></h1>
                 <div class="banner"><img class="img-fluid" src="App_themes/images/header-banner.png" alt="Trung tâm báo chí TP.Hồ Chí Minh" title="Trung tâm báo chí TP.Hồ Chí Minh"></div>
-                <span class="btn-expand" href="#">
-                    <i class="fal fa-bars"></i>
-                    <i class="fal fa-times"></i>
-                </span>
+                <div class="site-header__tools">
+                    <a href="tel:+84357216216" class="btn-hotline">
+                        <i class="fal fa-phone"></i>
+                    </a>
+                    <span class="btn-search-mobile">
+                        <i class="fal fa-search"></i>
+                        <i class="fal fa-times"></i>
+                    </span>
+                    <span class="btn-expand" href="#">
+                        <i class="fal fa-bars"></i>
+                        <i class="fal fa-times"></i>
+                    </span>
+                </div>
             </div>
+            <!-- nav -->
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/" title="Trang chủ"><i class="fas fa-home"></i></a>
@@ -63,6 +74,11 @@
                     </div>
                 </li>
             </ul>
+            <!-- mobile search -->
+            <div class="input-wrap input-wrap-mobile" id="search-mobile">
+                <input type="text" class="form-control" id="searchInput-mobile" name="searchInput">
+                <a href="#" id="btnSearch" class="fal fa-search"></a>
+            </div>
             <div class="breaking">
                 <h2 class="breaking__label">Theo dòng sự kiện:</h2>
                 <ul class="breaking__listing">
