@@ -152,6 +152,21 @@
         }
     }
 
+    &.has-live {
+        .story__title {
+            a {
+                &::after {
+                    content: '';
+                    font-family: 'Font Awesome 5 Pro';
+                    display: inline-block;
+                    margin-left: 8px;
+                    font-weight: 400;
+                    color: #f44336;
+                }
+            }
+        }
+    }
+
     &.has-video {
         .story {
             &__title {
