@@ -162,6 +162,10 @@
                     margin-left: 8px;
                     font-weight: 400;
                     color: #f44336;
+                    animation-name: flash;
+                    animation-duration: 0.75s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
             }
         }
