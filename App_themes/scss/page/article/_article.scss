@@ -169,6 +169,14 @@
             margin: 0px 0 1.5rem;
             font-size: 1.125rem;
             line-height: 1.4;
+
+            a {
+                color: $primary;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
 
         .embed-youtube,
