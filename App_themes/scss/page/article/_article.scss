@@ -567,19 +567,26 @@
         clear: both;
 
         &-frame {
-            position: absolute;
+            position: relative;
             width: 100%;
-            height: 100%;
-            // clip: rect(0px, 375px, 574px, -10px);
         }
 
         &-inpage {
             display: inline-block;
             width: 100%;
             height: 100%;
+            clip: rect(0px, auto, auto, 0px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        &-content {
             position: fixed;
             top: 0;
             left: 0;
+            transform: translateZ(0px);
         }
 
         @media screen and(min-width: 768px) {
