@@ -75,6 +75,9 @@ $(function() {
         var newSrc = $('.story--vertical').find('.story__thumb img').attr('data-src');
         $('.story--vertical').find('.story__thumb img').attr('src', newSrc);
     }
+
+    // add class for story has gif image
+    $('.story__thumb img[src$=".gif"]').parents('.story').addClass('story--gif');
 });
 
 /*customise function*/

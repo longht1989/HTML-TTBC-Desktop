@@ -152,6 +152,49 @@
         }
     }
 
+    &--gif {
+        .story__thumb {
+            a {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                padding-bottom: 56.25%;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: none;
+            }
+        }
+
+        &.story--vertical {
+            .story__thumb {
+                a {
+                    padding-bottom: 116.4%;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                        max-width: initial;
+                    }
+                }
+            }
+        }
+
+        .page-index .zone--timeline & {
+            .story__thumb {
+                a {
+                    padding-bottom: 75%;
+                }
+            }
+        }
+    }
+
     &.has-live {
         .story__title {
             a {
