@@ -172,6 +172,9 @@
             .nav-item {
                 border-bottom: none;
                 background-color: transparent;
+                font-size: 0.875rem;
+                text-transform: none;
+                letter-spacing: -0.5px;
 
                 &:hover {
                     background-color: #106969;
@@ -184,6 +187,7 @@
 
             .nav-link {
                 color: white;
+                padding: 0.5rem 0.5rem;
             }
 
             .nav-search {
