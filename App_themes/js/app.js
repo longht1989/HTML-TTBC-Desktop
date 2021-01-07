@@ -57,7 +57,8 @@ $(function() {
     // button click
     $('#site-header .btn-expand').on('click', btnExpandClick);
     $('#site-header .btn-search-mobile').on('click', btnSearchClick);
-    $('#site-header .fa-times').on('click', btnCloseClick);
+    $('#site-header .site-header__tools .fa-times').on('click', btnCloseClick);
+    $('#site-header .nav-search > .nav-link').on('click', btnToggleSearchDesktop);
 
     // site mask click
     $('.site-mask').on('click', siteMaskClick);
@@ -123,6 +124,12 @@ function btnCloseClick(e) {
     siteMaskClick();
 }
 
+function btnToggleSearchDesktop(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleSearchDesktop();
+}
+
 function expandSearch() {
     $('#site-header .input-wrap-mobile').toggle();
     $('.btn-search-mobile .fa-search').toggle();
@@ -144,4 +151,9 @@ function siteMaskClick() {
     $('.btn-search-mobile .fa-times').hide();
     $('#site-header .input-wrap-mobile').hide();
     $('body').removeClass('is-expanded');
+}
+
+function toggleSearchDesktop() {
+    $('.nav-search > .nav-link').toggleClass('is-active');
+    $('.nav-search .search-wrap').toggleClass('is-active');
 }

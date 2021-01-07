@@ -190,9 +190,29 @@
                 padding: 0.5rem 0.5rem;
             }
 
-            .nav-search {
+            .nav-item.nav-search {
                 &>.nav-link {
                     display: block;
+                    cursor: pointer;
+
+                    .fas {
+                        width: 18px;
+                        text-align: center;
+                    }
+
+                    .fa-times {
+                        display: none;
+                    }
+
+                    &.is-active {
+                        .fa-search {
+                            display: none;
+                        }
+
+                        .fa-times {
+                            display: inline-block;
+                        }
+                    }
                 }
 
                 .search-wrap {
@@ -201,13 +221,15 @@
                     display: none;
                     position: absolute;
                     padding: 1rem;
-                }
 
-                &:hover {
-                    .search-wrap {
+                    &.is-active {
                         display: block;
                         background-color: #f0f0f0;
                         width: 300px;
+                    }
+
+                    .fa-search {
+                        cursor: pointer;
                     }
                 }
             }
